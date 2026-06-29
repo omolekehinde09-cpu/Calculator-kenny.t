@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="calculator">
+
+        <div class="title">
+            Scientific Calculator
+        </div>
+
+        <input type="text" id="display" readonly>
+
+        <div class="buttons">
+
+            <button onclick="clearDisplay()" class="red">AC</button>
+            <button onclick="deleteLast()">DEL</button>
+            <button onclick="append('(')">(</button>
+            <button onclick="append(')')">)</button>
+
+            <button onclick="append('7')">7</button>
+            <button onclick="append('8')">8</button>
+            <button onclick="append('9')">9</button>
+            <button onclick="append('/')">÷</button>
+
+            <button onclick="append('4')">4</button>
+            <button onclick="append('5')">5</button>
+            <button onclick="append('6')">6</button>
+            <button onclick="append('*')">×</button>
+
+            <button onclick="append('1')">1</button>
+            <button onclick="append('2')">2</button>
+            <button onclick="append('3')">3</button>
+            <button onclick="append('-')">−</button>
+
+            <button onclick="append('0')">0</button>
+            <button onclick="append('.')">.</button>
+            <button onclick="calculate()" class="green">=</button>
+            <button onclick="append('+')">+</button>
+
+            <button onclick="sin()">sin</button>
+            <button onclick="cos()">cos</button>
+            <button onclick="tan()">tan</button>
+            <button onclick="showPermutation()">nPr</button>
+
+            <button onclick="showCombination()">nCr</button>
+            <button class="wide" onclick="showSimultaneous()">
+                Simultaneous Solver
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Permutation -->
+
+<div class="modal" id="permModal">
+
+<div class="modal-box">
+
+<h2>Permutation (nPr)</h2>
+
+<input type="number" id="permN" placeholder="Enter n">
+
+<input type="number" id="permR" placeholder="Enter r">
+
+<button onclick="calculatePermutation()">
+Calculate
+</button>
+
+<p id="permResult"></p>
+
+<button onclick="closeModal('permModal')">
+Close
+</button>
+
+</div>
+
+</div>
+
+<!-- Combination -->
+
+<div class="modal" id="combModal">
+
+<div class="modal-box">
+
+<h2>Combination (nCr)</h2>
+
+<input type="number" id="combN" placeholder="Enter n">
+
+<input type="number" id="combR" placeholder="Enter r">
+
+<button onclick="calculateCombination()">
+Calculate
+</button>
+
+<p id="combResult"></p>
+
+<button onclick="closeModal('combModal')">
+Close
+</button>
+
+</div>
+
+</div>
+
+<!-- Simultaneous -->
+
+<div class="modal" id="simModal">
+
+<div class="modal-box">
+
+<h2>2×2 Simultaneous Solver</h2>
+
+<input id="a1" placeholder="a₁">
+
+<input id="b1" placeholder="b₁">
+
+<input id="c1" placeholder="c₁">
+
+<input id="a2" placeholder="a₂">
+
+<input id="b2" placeholder="b₂">
+
+<input id="c2" placeholder="c₂">
+
+<button onclick="solveSimultaneous()">
+Solve
+</button>
+
+<p id="simResult"></p>
+
+<button onclick="closeModal('simModal')">
+Close
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
